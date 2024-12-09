@@ -26,6 +26,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -188,7 +189,7 @@ namespace JsonExcel
         {
             using (var excel = new ExcelPackage(new FileInfo(xlsx_file)))
             {
-                var ws = excel.Workbook.Worksheets[1];
+                var ws = excel.Workbook.Worksheets[0];
 
                 if (ws.Cells[header_row, 1].Value.Equals("Key") && ws.Tables[0].Address.Columns > 2)
                 {
